@@ -3,7 +3,7 @@ import Image from "next/image";
 function Hero() {
   return (
     <div 
-        className='bg-danny-grey w-full h-screen relative overflow-hidden'>
+        className='bg-custom-background w-full h-screen relative overflow-hidden'>
         <video 
             className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0 grayscale' 
             autoPlay 
@@ -22,7 +22,7 @@ function Hero() {
                 flex 
                 justify-center
                 items-center
-                text-icterine 
+                text-custom-main 
                 w-fit 
                 z-20 
                 absolute 

@@ -14,16 +14,20 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       backgroundColor: {
-        'icterine': '#FFFF65',
         'danny-grey': '#474350',
-        'bittersweet': '#E26D5C',
-        'powder-blue': '#B6C2D9',
+        
+        'custom-background': '#1E1E34',
+        'custom-main': '#FFFF65',
+        'custom-second': '#E26D5C',
+        'custom-accent': '#B6C2D9'
       },
       colors: {
-        'icterine': '#FFFF65',
         'danny-grey': '#474350',
-        'bittersweet': '#E26D5C',
-        'powder-blue': '#B6C2D9',
+
+        'custom-background': '#1E1E34',
+        'custom-main': '#FFFF65',
+        'custom-second': '#E26D5C',
+        'custom-accent': '#B6C2D9'
       }
     },
   },

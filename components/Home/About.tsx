@@ -1,10 +1,14 @@
 function About() {
   return (
-    <div>
-        <p>About Us</p>
-        <p>Joins us to achieve your dream body and psychical goals. With the best equipment there 
-            is and some of the best trainers, we can help you achieve any goal you have set your eyes 
-            on. All we need is you and your dedication.</p>
+    <div className='flex justify-center items-center bg-danny-grey w-full py-52'>
+        <div className='flex flex-col justify-center items-center w-1/3 gap-5'>
+            <p className='text-icterine text-xl'>About Us</p>
+            <p className='text-icterine text-l text-center'>
+                Joins us to achieve your dream body and psychical goals. With the best equipment there 
+                is and some of the best trainers, we can help you achieve any goal you have set your eyes 
+                on. All we need is you and your dedication.
+            </p>
+        </div>
     </div>
   )
 }

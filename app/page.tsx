@@ -2,6 +2,7 @@ import HomeNavbar from "@/components/HomeNavbar";
 import Hero from "@/components/Home/Hero";
 import About from "@/components/Home/About";
 import Values from "@/components/Home/Values";
+import Offer from "@/components/Home/Offer";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HomeNavbar />
       <About />
       <Values />
+      <Offer />
     </main>
   );
 }

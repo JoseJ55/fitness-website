@@ -55,7 +55,7 @@ export default function Offer() {
     ];
 
     return (
-        <div className='w-full bg-custom-background flex justify-center items-center'>
+        <div className='w-full bg-custom-background flex justify-center items-center py-32'>
             <div className='w-8/12 flex flex-col justify-center items-center gap-6'>
                 <p className='text-custom-main text-2xl'>What We Offer</p>
 

@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 
 function HomeNavbar() {
   const router = useRouter();

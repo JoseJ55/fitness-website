@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className='flex justify-center items-center bg-custom-background w-full py-52'>
+    <div id='about-section' className='flex justify-center items-center bg-custom-background w-full py-52'>
         <div className='flex flex-col justify-center items-center w-1/3 gap-5'>
             <p className='text-custom-main text-xl'>About Us</p>
             <p className='text-custom-main text-l text-center'>

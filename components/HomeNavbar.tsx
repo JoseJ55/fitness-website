@@ -11,7 +11,7 @@ function HomeNavbar() {
 
   const navbarRef = useRef<HTMLInputElement>(null);
 
-  const [isStuck, setIsStuck] = useState(false);
+  const [isStuck, setIsStuck] = useState(pathname !== '/' || false);
 
   const handleLogoClick = () => {
     if (pathname === '/') {
@@ -36,9 +36,13 @@ function HomeNavbar() {
     }
   };
 
+  const handleNav = (location: string) => {
+    router.push(`/${location}`);
+  };
+
   useEffect(() => {
     const checkSticky = () => {
-      if (navbarRef.current) {
+      if (navbarRef.current && pathname === '/') {
         const rect = navbarRef.current.getBoundingClientRect();
         setIsStuck(rect.top <= 0);
       }
@@ -119,24 +123,33 @@ function HomeNavbar() {
               hover:cursor-pointer
             `}
           >About</a>
-          <a className='
-            text-custom-main 
-            p-1
-            hover:text-custom-second
-            hover:cursor-pointer
-          '>Trainers</a>
-          <a className='
-            text-custom-main 
-            p-1
-            hover:text-custom-second
-            hover:cursor-pointer
-          '>Shop</a>
-          <a className='
-            text-custom-main 
-            p-1
-            hover:text-custom-second
-            hover:cursor-pointer
-          '>Join</a>
+          <a 
+            onClick={() => handleNav('trainers')}
+            className='
+              text-custom-main 
+              p-1
+              hover:text-custom-second
+              hover:cursor-pointer
+            '
+          >Trainers</a>
+          <a 
+            onClick={() => handleNav('shop')}
+            className='
+              text-custom-main 
+              p-1
+              hover:text-custom-second
+              hover:cursor-pointer
+            '
+          >Shop</a>
+          <a 
+            onClick={() => handleNav('membership')}
+            className='
+              text-custom-main 
+              p-1
+              hover:text-custom-second
+              hover:cursor-pointer
+            '
+          >Join</a>
         </div>
       </div>
     </div>

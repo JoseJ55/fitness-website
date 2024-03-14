@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
 import Image from "next/image";
 
 interface offers {
@@ -8,9 +12,57 @@ interface offers {
 };
 
 function OfferCard({ item }: { item: offers}) {
+    const cardRef = useRef<HTMLInputElement>(null);
+
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) =>{
+            if (entry.isIntersecting) {
+                setShow(true);
+            } else {
+                if (entry.boundingClientRect.top > 0) {
+                    setShow(false);
+                }
+            }
+        });
+    
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+        return () => {
+          observer.disconnect();
+        };
+    }, [cardRef, item.id]);
+
     return (
-        <div className={`w-full flex justify-between items-start gap-5 ${item.id % 2 == 0 ? 'flex-row-reverse' : 'flex-row'}`}>
-            <div className='w-2/4 h-full relative overflow-hidden'>
+        <div 
+            ref={cardRef}
+            className={`
+                w-full 
+                flex 
+                justify-between 
+                overflow-hidden
+                items-start 
+                gap-5 
+                transition-all
+                duration-500
+                ease-in-out
+                ${item.id % 2 == 0 ? 'flex-row-reverse' : 'flex-row'}
+            `}
+        >
+            <div 
+                className={`
+                    w-2/4 
+                    h-full 
+                    relative 
+                    overflow-hidden
+                    transition-all
+                    duration-500
+                    ease-in-out
+                    ${show ? 'translate-x-0 opacity-1' : '-translate-x-96 opacity-0'}
+                `}
+            >
                 <Image 
                     width={500}
                     height={500}
@@ -18,7 +70,21 @@ function OfferCard({ item }: { item: offers}) {
                     alt='gym photo for the equipment' />
             </div>
 
-            <div className='w-2/4 flex flex-col justify-start items-start gap-6 py-5'>
+            <div 
+                className={`
+                    w-2/4 
+                    flex 
+                    flex-col 
+                    justify-start 
+                    items-start 
+                    gap-6 
+                    py-5
+                    transition-all
+                    duration-500
+                    ease-in-out
+                    ${show ? 'translate-x-0 opacity-1' : 'translate-x-96 opacity-0'}
+                `}
+            >
                 <p className='text-custom-main text-lg'>{item.title}</p>
                 <p className='text-custom-main'>{item.desc}</p>
             </div>

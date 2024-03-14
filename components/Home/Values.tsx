@@ -33,7 +33,7 @@ const ValueCard = ({ item }: { item: value }) => {
         return () => {
           observer.disconnect();
         };
-    }, [cardRef]);
+    }, [cardRef, id]);
 
     return (
         <div 

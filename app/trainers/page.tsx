@@ -1,6 +1,7 @@
 import HomeNavbar from "@/components/HomeNavbar";
 import Hero from "@/components/Trainers/Hero";
 import Info from "@/components/Trainers/Info";
+import Trainers from "@/components/Trainers/Trainers";
 
 export default function Home() {
     return (
@@ -8,6 +9,7 @@ export default function Home() {
         <HomeNavbar />
         <Hero />
         <Info />
+        <Trainers />
       </main>
     );
   }

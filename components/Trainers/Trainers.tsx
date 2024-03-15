@@ -1,3 +1,7 @@
+"use client";
+
+import React, { useState, useEffect, useRef } from 'react';
+
 import Image from "next/image"
 
 interface review {
@@ -16,10 +20,42 @@ interface train {
 };
 
 const TrainerCard = ({ trainer }: { trainer: train }) => {
+    const trainerRef = useRef<HTMLInputElement>(null);
+
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) =>{
+            if (entry.isIntersecting) {
+                setShow(true);
+            } else {
+                if (entry.boundingClientRect.top > 0) {
+                    setShow(false);
+                }
+            }
+        });
+    
+        if (trainerRef.current) observer.observe(trainerRef.current);
+
+        return () => {
+          observer.disconnect();
+          setShow(false);
+        };
+    }, [trainerRef]);
 
     return (
-        <div className='w-full h-96 flex justify-start items-start gap-10'>
-            <div className='w-3/12 h-full relative clip-top-triangle'>
+        <div ref={trainerRef} className='w-full h-96 flex justify-start items-start gap-10'>
+            <div className={`
+                w-3/12 
+                h-full 
+                relative 
+                clip-top-triangle
+                shadow-2xl
+                transition-all
+                duration-1000
+                ease-in-out
+                ${show ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}
+            `}>
                 <Image
                     layout='fill'
                     objectFit='cover'
@@ -28,18 +64,51 @@ const TrainerCard = ({ trainer }: { trainer: train }) => {
             </div>
 
             <div className='w-8/12 py-6 flex flex-col justify-start items-center gap-10'>
-                <div className='w-full flex flex-col justify-start items-start gap-3'>
+                <div className={`
+                    w-full 
+                    flex 
+                    flex-col 
+                    justify-start 
+                    items-start gap-3
+                    transition-all
+                    duration-[1300ms]
+                    ease-in-out
+                    ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
+                `}>
                     <p className='text-custom-main text-xl'>{trainer.first_name} {trainer.last_name}</p>
                     <p className='text-custom-main'>{trainer.desc}</p>
                 </div>
 
                 <div className='w-full flex justify-start items-start gap-5'>
-                    <div className='w-5/12 flex flex-col justify-start items-center gap-2'>
+                    <div className={`
+                        w-5/12 
+                        flex 
+                        flex-col 
+                        justify-start 
+                        items-center 
+                        gap-2
+                        transition-all
+                        duration-[1600ms]
+                        ease-in-out
+                        ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
+                    `}>
                         {trainer.qualifications.map((qualification, index) => (
                             <p key={index} className='text-custom-main text-sm decoration-dashed'>{qualification}</p>
                         ))}
                     </div>
-                    <div className='w-7/12 flex flex-col justify-start items-center gap-2'>
+
+                    <div className={`
+                        w-7/12 
+                        flex 
+                        flex-col 
+                        justify-start 
+                        items-center 
+                        gap-2
+                        transition-all
+                        duration-[1900ms]
+                        ease-in-out
+                        ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
+                    `}>
                         {trainer.reviews.map((review, index) => (
                             <p key={index} className='text-custom-main text-sm'>{review.review} - {review.name}</p>
                         ))}

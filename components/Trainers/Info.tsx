@@ -1,7 +1,30 @@
+"use client";
+
+import React, { useState, useEffect, useRef } from 'react';
+
 function Info() {
+    const infoRef = useRef<HTMLInputElement>(null);
+
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) =>{
+            if (entry.isIntersecting) setShow(true);
+        });
+    
+        if (infoRef.current) observer.observe(infoRef.current);
+
+        return () => {
+          observer.disconnect();
+          setShow(false);
+        };
+    }, [infoRef]);
+
+
+
     return (
-        <div className='w-full h-96 flex justify-center items-center relative py-64 bg-custom-background'>
-            <div className='
+        <div ref={infoRef} className='w-full h-96 flex justify-center items-center relative py-64 bg-custom-background'>
+            <div className={`
                 absolute 
                 top-0 
                 left-0 
@@ -10,9 +33,13 @@ function Info() {
                 z-10
                 bg-custom-main
                 opacity-60
+                transition-all
+                duration-1000
+                ease-in-out
                 clip-pad-top-triangle
-            '></div>
-            <div className='
+                ${show ? 'translate-x-0' : '-translate-x-full'}
+            `}></div>
+            <div className={`
                 absolute 
                 bottom-0 
                 right-0 
@@ -21,10 +48,26 @@ function Info() {
                 z-10
                 bg-custom-main
                 opacity-60
+                transition-all
+                duration-1000
+                ease-in-out
                 clip-pad-bottom-triangle
-            '></div>
+                ${show ? 'translate-x-0' : 'translate-x-full'}
+            `}></div>
 
-            <div className='w-2/6 z-30 flex flex-col justify-start items-start gap-3'>
+            <div className={`
+                w-2/6 
+                z-30 
+                flex 
+                flex-col 
+                justify-start 
+                items-start 
+                gap-3
+                transition-all
+                duration-1000
+                ease-in-out
+                ${show ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}
+            `}>
                 <p className='text-custom-main text-xl w-fit -translate-x-1/2'>Join Us</p>
                 <p className='text-custom-main'>Whether you&apos;re a beginner looking to kickstart your fitness journey or a seasoned athlete aiming to reach new heights, our trainers are here to support you every step of the way. With personalized training programs tailored to your unique needs and goals, you&apos;ll receive the attention and expertise you deserve to succeed.</p>
             </div>

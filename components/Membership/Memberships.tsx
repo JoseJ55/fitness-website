@@ -1,3 +1,7 @@
+"use client";
+
+import React, { useState, useEffect, useRef } from 'react';
+
 import Image from "next/image";
 
 interface price {
@@ -16,8 +20,27 @@ interface membership {
 const Membership = ({ membership } : { membership : membership}) => {
     const { title, icon, price, privileges } = membership;
 
+    const membershipRef = useRef<HTMLInputElement>(null);
+
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) =>{
+            if (entry.isIntersecting) setShow(true);
+        });
+    
+        if (membershipRef.current) observer.observe(membershipRef.current);
+
+        return () => {
+          observer.disconnect();
+          setShow(false);
+        };
+    }, [membershipRef]);
+
     return (
-        <div className='
+        <div 
+        ref={membershipRef}
+        className={`
             bg-custom-accent 
             py-14 
             px-10 
@@ -33,7 +56,8 @@ const Membership = ({ membership } : { membership : membership}) => {
             duration-500
             ease-in-out
             hover:scale-110
-        '>
+            ${show ? 'translate-y-0 opacity-100' : 'translate-y-1/2 opacity-0'}
+        `}>
             <div className='w-1/2 min-h-14  relative'>
                 <Image
                     layout='fill'

@@ -139,7 +139,9 @@ function Memberships() {
     ]
 
     return (
-        <div className='w-full min-h-96 py-96 bg-custom-background flex justify-center items-center'>
+        <div className='w-full min-h-96 py-96 bg-custom-background flex flex-col justify-center items-center gap-32'>
+            <p className='text-custom-main text-4xl -translate-x-1/3 w-1/4 font-bold'>Become a Member and start your journey</p>
+            
             <div className='w-8/12 grid grid-cols-3 gap-10 align-items-stretch'>
                 {memberships.map((membership) => (
                     <Membership key={membership.id} membership={membership} />

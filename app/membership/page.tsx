@@ -1,6 +1,7 @@
 import HomeNavbar from "@/components/HomeNavbar";
 import Hero from "@/components/Membership/Hero";
 import Memberships from "@/components/Membership/Memberships";
+import FQA from "@/components/Membership/FQA";
 
 export default function Home() {
     return (
@@ -8,6 +9,7 @@ export default function Home() {
         <HomeNavbar />
         <Hero />
         <Memberships />
+        <FQA />
       </main>
     );
   }

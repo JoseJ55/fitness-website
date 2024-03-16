@@ -14,7 +14,7 @@ const Product = ({ product }: { product: product}) => {
         <div className={`
             ${type === 'long' ? 'col-span-2' : type === 'tall' ? 'row-span-2' : 'col-span-1'}
             relative 
-            min-h-72 
+            min-h-32 sm:min-h-40 md:min-h-48 lg:min-h-64 xl:min-h-72 
             h-full
             clip-top-triangle
             transition-all
@@ -76,7 +76,12 @@ function Shop() {
 
     return (
         <div className='w-full min-h-96 bg-custom-background flex justify-center items-center py-32'>
-            <div className='w-6/12 grid grid-cols-3 gap-8'>
+            <div className='
+                w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 2xl:w-5/12
+                grid 
+                grid-cols-3 
+                gap-6 sm:gap-8
+            '>
                 {products.map(product => (
                     <Product key={product.id} product={product} />
                 ))}

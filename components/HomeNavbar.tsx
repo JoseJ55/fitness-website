@@ -11,7 +11,8 @@ function HomeNavbar() {
 
   const navbarRef = useRef<HTMLDivElement>(null);
 
-  const [isStuck, setIsStuck] = useState(pathname !== '/' || false);
+  // const [isStuck, setIsStuck] = useState(pathname !== '/' || false);
+  const [isStuck, setIsStuck] = useState(false);
 
   const handleLogoClick = () => {
     if (pathname === '/') {
@@ -42,10 +43,16 @@ function HomeNavbar() {
 
   useEffect(() => {
     const checkSticky = () => {
-      if (navbarRef.current && pathname === '/') {
+      if (navbarRef.current && pathname === '/') { // && pathname === '/'
         const rect = navbarRef.current.getBoundingClientRect();
         if (window.innerWidth >= 640) {
           setIsStuck(rect.top <= 0);
+        }
+      } else {
+        if (window.innerWidth >= 640) {
+          setIsStuck(true);
+        } else {
+          setIsStuck(false);
         }
       }
     };
@@ -55,7 +62,7 @@ function HomeNavbar() {
     return () => {
       window.removeEventListener('scroll', checkSticky);
     }
-  }, []);
+  }, [pathname]);
 
   return (
     <div

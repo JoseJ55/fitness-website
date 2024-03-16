@@ -44,10 +44,21 @@ const TrainerCard = ({ trainer }: { trainer: train }) => {
     }, [trainerRef]);
 
     return (
-        <div ref={trainerRef} className='w-full h-96 flex justify-start items-start gap-10'>
+        <div 
+            ref={trainerRef} 
+            className='
+            w-full 
+            h-fit lg:h-96 
+            flex 
+            flex-col md:flex-row
+            justify-start 
+            items-start 
+            gap-10 
+            overflow-hidden
+        '>
             <div className={`
-                w-3/12 
-                h-full 
+                w-full md:w-3/12 
+                min-h-72 sm:h-96 md:h-full 
                 relative 
                 clip-top-triangle
                 shadow-2xl
@@ -63,7 +74,15 @@ const TrainerCard = ({ trainer }: { trainer: train }) => {
                     alt='trainer photo' />
             </div>
 
-            <div className='w-8/12 py-6 flex flex-col justify-start items-center gap-10'>
+            <div className='
+                w-full md:w-8/12 
+                py-6 
+                flex 
+                flex-col 
+                justify-start 
+                items-center 
+                gap-10 md:gap-5
+            '>
                 <div className={`
                     w-full 
                     flex 
@@ -79,9 +98,16 @@ const TrainerCard = ({ trainer }: { trainer: train }) => {
                     <p className='text-custom-main'>{trainer.desc}</p>
                 </div>
 
-                <div className='w-full flex justify-start items-start gap-5'>
+                <div className='
+                    w-full 
+                    flex 
+                    flex-col sm:flex-row
+                    justify-start 
+                    items-start 
+                    gap-10 sm:gap-5
+                '>
                     <div className={`
-                        w-5/12 
+                        w-full sm:w-5/12 
                         flex 
                         flex-col 
                         justify-start 
@@ -93,12 +119,12 @@ const TrainerCard = ({ trainer }: { trainer: train }) => {
                         ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
                     `}>
                         {trainer.qualifications.map((qualification, index) => (
-                            <p key={index} className='text-custom-main text-sm decoration-dashed'>{qualification}</p>
+                            <p key={index} className='text-custom-main text-sm decoration-dashed'>- {qualification}</p>
                         ))}
                     </div>
 
                     <div className={`
-                        w-7/12 
+                        w-full sm:w-7/12 
                         flex 
                         flex-col 
                         justify-start 
@@ -110,7 +136,7 @@ const TrainerCard = ({ trainer }: { trainer: train }) => {
                         ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
                     `}>
                         {trainer.reviews.map((review, index) => (
-                            <p key={index} className='text-custom-main text-sm'>{review.review} - {review.name}</p>
+                            <p key={index} className='text-custom-main text-sm'>&quot;{review.review}&quot; - {review.name}</p>
                         ))}
                     </div>
                 </div>
@@ -176,7 +202,14 @@ function Trainers() {
 
     return (
         <div className='bg-custom-background flex justify-center items-center py-64 w-full'>
-            <div className='w-4/6 flex flex-col justify-center items-center gap-32'>
+            <div className='
+                w-5/6 md:9/12 lg:w-4/6 2xl:w-1/2
+                flex 
+                flex-col 
+                justify-center 
+                items-center 
+                gap-32
+            '>
                 {trainers.map((trainer) => (
                     <TrainerCard key={trainer.id} trainer={trainer} />
                 ))}

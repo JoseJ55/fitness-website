@@ -31,6 +31,7 @@ function Footer() {
             items-center 
             p-8 py-24 lg:p-24 
             bg-custom-background
+            overflow-hidden
         '>
             <div className='
                 w-full sm:w-2/3 md:w-3/4 xl:w-1/2

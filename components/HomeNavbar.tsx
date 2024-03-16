@@ -9,7 +9,7 @@ function HomeNavbar() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const navbarRef = useRef<HTMLInputElement>(null);
+  const navbarRef = useRef<HTMLDivElement>(null);
 
   const [isStuck, setIsStuck] = useState(pathname !== '/' || false);
 
@@ -44,7 +44,9 @@ function HomeNavbar() {
     const checkSticky = () => {
       if (navbarRef.current && pathname === '/') {
         const rect = navbarRef.current.getBoundingClientRect();
-        setIsStuck(rect.top <= 0);
+        if (window.innerWidth >= 640) {
+          setIsStuck(rect.top <= 0);
+        }
       }
     };
 
@@ -72,7 +74,7 @@ function HomeNavbar() {
       <div className={`
         relative 
         flex
-        w-10/12
+        w-10/12 xl:w-8/12
         h-14
         flex
         justify-start
@@ -112,7 +114,7 @@ function HomeNavbar() {
           ease-in-out
           absolute
           top-0
-          ${isStuck ? 'right-0 translate-x-0 ' : 'right-1/2 translate-x-1/2 '}
+          ${isStuck ? 'right-0 sm:-translate-x-1/2 lg:-translate-x-1/4 xl:translate-x-1/12' : 'right-1/2 translate-x-1/2 '}
         `}>
           <a 
             onClick={handleAbout}

@@ -28,6 +28,9 @@ const config: Config = {
         'custom-main': '#FFFF65',
         'custom-second': '#E26D5C',
         'custom-accent': '#B6C2D9'
+      },
+      spacing: {
+        '3/2': '150%'
       }
     },
   },

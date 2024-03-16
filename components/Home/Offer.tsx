@@ -41,6 +41,7 @@ function OfferCard({ item }: { item: offers}) {
             className={`
                 w-full 
                 flex 
+                flex-col ${item.id % 2 == 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'}
                 justify-between 
                 overflow-hidden
                 items-start 
@@ -48,12 +49,11 @@ function OfferCard({ item }: { item: offers}) {
                 transition-all
                 duration-500
                 ease-in-out
-                ${item.id % 2 == 0 ? 'flex-row-reverse' : 'flex-row'}
             `}
         >
             <div 
                 className={`
-                    w-2/4 
+                    w-full sm:w-1/2 
                     h-full 
                     relative 
                     overflow-hidden
@@ -72,7 +72,7 @@ function OfferCard({ item }: { item: offers}) {
 
             <div 
                 className={`
-                    w-2/4 
+                    w-full sm:w-1/2
                     flex 
                     flex-col 
                     justify-start 
@@ -122,7 +122,13 @@ export default function Offer() {
 
     return (
         <div className='w-full bg-custom-background flex justify-center items-center py-32'>
-            <div className='w-8/12 flex flex-col justify-center items-center gap-6'>
+            <div className='
+                w-8/12 md:w-9/12 xl:w-7/12
+                flex 
+                flex-col 
+                justify-center 
+                items-center 
+                gap-6'>
                 <p className='text-custom-main text-2xl'>What We Offer</p>
 
                 <div className='w-full flex flex-col justify-center items-center gap-20'>

@@ -12,10 +12,18 @@ function Contact() {
     };
 
     return (
-        <div className='flex justify-center items-center p-32 bg-custom-background w-full'>
+        <div className='
+            flex 
+            justify-center 
+            items-center 
+            sm:p-8 sm:py-16 md:p-16 md:py-24 lg:p-32 xl:p-36
+            bg-custom-background 
+            w-full 
+            overflow-hidden
+        '>
             <div 
                 className={`
-                    w-4/12 
+                    w-3/2 sm:w-8/12 xl:w-1/4
                     flex 
                     flex-col 
                     justify-start 
@@ -42,7 +50,7 @@ function Contact() {
 
             <div 
                 className={`
-                    w-4/12 
+                    w-3/2 sm:w-8/12 xl:w-1/4
                     flex 
                     flex-col 
                     justify-start 
@@ -55,11 +63,18 @@ function Contact() {
                 `}
             >
                 <div className='w-full flex flex-col gap-2'>
-                    <p className='text-custom-main text-xl'>
+                    <p className='
+                        w-full
+                        text-custom-main 
+                        text-xl
+                    '>
                         Stay in touch
                     </p>
 
-                    <p className='text-custom-main'>
+                    <p className='
+                        w-full
+                        text-custom-main
+                    '>
                         Join our news letter to stay in touch with our activity.
                     </p>
                 </div>

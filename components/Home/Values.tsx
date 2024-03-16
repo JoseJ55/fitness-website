@@ -11,7 +11,7 @@ interface value {
 const ValueCard = ({ item }: { item: value }) => {
     const { id, title, desc } = item;
 
-    const cardRef = useRef<HTMLInputElement>(null);
+    const cardRef = useRef<HTMLDivElement>(null);
 
     const [show, setShow] = useState(false);
 
@@ -39,31 +39,32 @@ const ValueCard = ({ item }: { item: value }) => {
         <div 
             ref={cardRef}
             className={`
-                w-1/4 
+                w-10/12 sm:w-2/4 md:w-1/3 lg:w-4/12
                 bg-custom-accent 
-                flex 
+                flex-1 
                 flex-col 
                 justify-start 
                 items-center 
-                gap-5 
-                p-9 
+                gap-5 xl:gap-7
+                p-9 md:p-7 xl:p-10
                 min-h-80
+                max-h-96
                 relative
                 clip-top-triangle
                 transition-all
                 duration-1000
                 ease-in-out
-                ${show ? 'translate-x-0 opacity-100' : 'translate-x-96 opacity-0'}  
+                ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}  
             `}
         >
-            <p className='text-xl font-bold text-custom-main z-30'>{title}</p>
+            <p className='text-xl font-bold text-custom-main text-center z-30 xl:mb-4'>{title}</p>
             <p className='text-base text-custom-main text-center z-30'>{desc}</p>
         </div>
     );
 };
 
 export default function Values() {
-    const valueTitleRef = useRef<HTMLInputElement>(null);
+    const valueTitleRef = useRef<HTMLParagraphElement>(null);
     const viewableRef = useRef<boolean>(false);
 
     const values = [
@@ -148,6 +149,7 @@ export default function Values() {
                     opacity-70
                     z-10
                     w-fit
+                    text-nowrap
                 `}
             >
                 Our Values
@@ -156,10 +158,12 @@ export default function Values() {
             <div
                 className='
                     z-20
-                    w-2/3
+                    w-full md:w-11/12 lg:w-10/12 2xl:w-7/12
                     flex
+                    flex-col md:flex-row
                     justify-between
                     items-center
+                    gap-2 xl:gap-7
                 '
             >
                 {values.map((item) => (

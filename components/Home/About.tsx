@@ -35,8 +35,27 @@ function About() {
   }, []);
 
   return (
-    <div id='about-section' className='flex justify-center items-center bg-custom-background w-full py-64'>
-        <div ref={aboutRef} className='flex flex-col justify-center items-center w-1/3 gap-5'>
+    <div 
+      id='about-section' 
+      className='
+        flex 
+        justify-center 
+        items-center 
+        bg-custom-background 
+        w-full 
+        py-64 
+        overflow-hidden
+      '>
+        <div 
+          ref={aboutRef} 
+          className='
+            flex 
+            flex-col 
+            justify-center 
+            items-center 
+            w-2/3 md:w-1/2 lg:w-1/3 
+            gap-5
+          '>
             <p className={`
               text-custom-main 
               text-xl

@@ -69,8 +69,8 @@ function OfferCard({ item }: { item: offers}) {
             ref={cardRef}
             className={`
                 w-full 
-                h-96
-                py-72
+                h-72 sm:h-78 md:h-96
+                2xl:py-72
                 flex 
                 flex-col ${item.id % 2 == 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'}
                 overflow-hidden

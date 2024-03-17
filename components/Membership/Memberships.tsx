@@ -42,15 +42,15 @@ const Membership = ({ membership } : { membership : membership}) => {
         ref={membershipRef}
         className={`
             bg-custom-accent 
-            py-14 
-            px-10 
+            py-9 lg:py-14 
+            px-7 lg:px-10 
             flex 
             flex-col 
             justify-start 
             items-center 
             w-full 
             min-h-72 
-            gap-5 
+            gap-1 lg:gap-5 
             clip-top-triangle
             transition-all
             duration-500
@@ -67,20 +67,45 @@ const Membership = ({ membership } : { membership : membership}) => {
             </div>
 
             <div className='flex flex-col justify-start items-start w-full'>
-                <p className='text-2xl text-custom-main font-bold w-full text-center mb-2'>{title}</p>
+                <p className='
+                    text-xl lg:text-2xl 
+                    text-custom-main 
+                    font-bold 
+                    w-full 
+                    text-center 
+                    mb-2
+                '>{title}</p>
 
-                <p className='text-custom-main text-lg self-start'>${price.monthly} per month</p>
+                <p className='
+                    text-custom-main 
+                    text-base lg:text-lg 
+                    self-start
+                '>${price.monthly} per month</p>
                 {price.one_time != null &&
                     <div className='flex flex-col justify-start items-start px-4'>
-                        <p className='text-custom-main'>- one-time initiation fee of ${price.one_time}</p>
+                        <p className='text-custom-main text-sm lg:text-base'>- one-time initiation fee of ${price.one_time}</p>
                     </div>
                 }
             </div>
 
-            <div className='flex flex-col justify-start items-start gap-2 py-6'>
+            <div className='
+                flex 
+                flex-col 
+                justify-start 
+                items-start 
+                gap-1 lg:gap-2 
+                py-3 lg:py-6
+            '>
                 <p className='text-custom-main text-lg'>Benefits</p>
 
-                <div className='flex flex-col justify-start items-start gap-2 px-2'>
+                <div className='
+                    flex 
+                    flex-col 
+                    justify-start 
+                    items-start 
+                    gap-1 lg:gap-2 
+                    px-2
+                '>
                     {privileges.map((privilege, index) => (
                         <p key={index} className='text-custom-main text-sm'>- {privilege}</p>
                     ))}
@@ -139,10 +164,33 @@ function Memberships() {
     ]
 
     return (
-        <div className='w-full min-h-96 py-96 bg-custom-background flex flex-col justify-center items-center gap-32'>
-            <p className='text-custom-main text-4xl -translate-x-1/3 w-1/4 font-bold'>Become a Member and start your journey</p>
+        <div className='
+            w-full 
+            min-h-96 
+            py-72 sm:py-96 
+            bg-custom-background 
+            flex 
+            flex-col 
+            justify-center 
+            items-center 
+            gap-32 
+            overflow-hidden
+        '>
+            <p className='
+                text-custom-main 
+                text-4xl 
+                md:-translate-x-1/3 
+                w-3/4 sm:1/2 md:w-1/4 
+                font-bold
+            '>Become a Member and start your journey</p>
             
-            <div className='w-8/12 grid grid-cols-3 gap-10 align-items-stretch'>
+            <div className='
+                w-3/4 md:w-10/12 2xl:w-9/12 xl:w-8/12 2xl:w-2/4
+                grid 
+                grid-cols-1 md:grid-cols-3 
+                gap-10 md:gap-4 2xl:gap-10
+                align-items-stretch
+            '>
                 {memberships.map((membership) => (
                     <Membership key={membership.id} membership={membership} />
                 ))}

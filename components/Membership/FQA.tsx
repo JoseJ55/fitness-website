@@ -38,22 +38,22 @@ const QA = ({ qa } : { qa: question }) => {
 
     switch (id) {
         case 1:
-            container = 'w-1/4 flex flex-col self-start gap-5';
+            container = 'w-4/6 sm:w-1/4 flex flex-col self-start gap-3 sm:gap-5';
             quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? 'translate-x-1/4 opacity-100' : '-translate-x-0 opacity-0'}`;
             ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? 'translate-x-1/2 opacity-100' : 'translate-x-full opacity-0'}`;
             break;
         case 2:
-            container = 'w-1/4 flex flex-col self-end gap-5';
+            container = 'w-4/6 sm:w-1/4 flex flex-col self-end gap-3 sm:gap-5';
             quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/2 opacity-100' : '-translate-x-full opacity-0'}`;
             ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/4 opacity-100' : '-translate-x-0 opacity-0'}`;
             break;
         case 3:
-            container = 'w-1/4 flex flex-col self-center gap-5';
-            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/2 opacity-100' : '-translate-x-full opacity-0'}`;
-            ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/4 opacity-100' : 'translate-x-0 opacity-0'}`;
+            container = 'w-4/6 sm:w-1/4 flex flex-col self-center gap-3 sm:gap-5';
+            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/3 opacity-100' : '-translate-x-full opacity-0'}`;
+            ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-2/6 opacity-100' : 'translate-x-0 opacity-0'}`;
             break;
         default:
-            container = 'w-1/4 flex flex-col self-end gap-5';
+            container = 'w-4/6 sm:w-1/4 flex flex-col self-end gap-3 sm:gap-5';
             quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/4 opacity-100' : 'translate-x-0 opacity-0'}`;
             ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/2 opacity-100' : '-translate-x-full opacity-0'}`;
     }
@@ -115,9 +115,27 @@ function FQA() {
 
 
     return (
-        <div className='bg-custom-background flex justify-center items-center w-full'>
-            <div className='w-9/12 py-72 flex flex-col justify-center item-center'>
-                <p className={`text-custom-main font-bold text-8xl translate-x-full w-fit -rotate-45 sticky top-1/4 z-10 ${fade ? 'opacity-55' : 'opacity-100'}`}>FQA</p>
+        <div className='bg-custom-background flex justify-center items-center w-full overflow-hidden'>
+            <div className='
+                w-10/12 md:w-9/12 xl:w-7/12
+                py-44 sm:py-72 
+                flex 
+                flex-col 
+                justify-center 
+                item-center
+            '>
+                <p className={`
+                    text-custom-main 
+                    font-bold 
+                    text-6xl sm:text-8xl 
+                    translate-x-full 
+                    w-fit 
+                    -rotate-45 
+                    sticky 
+                    top-1/12 sm:top-1/4 xl:top-0
+                    z-10 
+                    ${fade ? 'opacity-55' : 'opacity-100'}
+                `}>FQA</p>
 
                 <div ref={questionsRef} className='flex flex-col justify-start items-center py-32 gap-32 w-full'>
                     {data.map((question) => (

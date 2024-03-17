@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fitness 101
 
-## Getting Started
+## Description
+This project is a dynamic website crafted with Next.js, Tailwind CSS, and TypeScript, aimed at honing design skills, implementing subtle animations, and mastering element control. Leveraging Next.js for seamless routing and page management, the site ensures swift navigation and a smooth user experience.
 
-First, run the development server:
+Tailwind CSS enhances rendering efficiency and ensures consistent design aesthetics across various screen sizes. With a responsive design tailored for screens ranging from 4K displays to mobile devices, the website guarantees optimal performance and accessibility.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Key Features
+* Next.js for efficient page routing and management.
+* Tailwind CSS for streamlined design and responsiveness.
+* TypeScript for robust type-checking and enhanced code quality.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Tools & Tech Used
+* Next.js: Handles routing and page organization.
+* Tailwind CSS: Enhances design aesthetics and responsiveness.
+* TypeScript: Ensures type safety and code integrity.
+* NPM: Manages project dependencies for enhanced functionality.
+* Firebase: Hosts and manages the website for seamless online access.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Images
+![Home image](https://github.com/JoseJ55/fitness-gym/blob/main/public/assets/fitness-101-main.png?raw=true)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Future Plans
+* Incorporate React components to enable dynamic rendering of product and informational pages.
+* Explore expanding functionality with additional routes and features.
 
-## Learn More
+## Links
+https://github.com/JoseJ55/fitness-website
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://fitness101-28.herokuapp.com/

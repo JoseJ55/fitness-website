@@ -14,12 +14,15 @@ interface offers {
 function OfferCard({ item }: { item: offers}) {
     const cardRef = useRef<HTMLInputElement>(null);
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [isLeaving, setIsLeaving] = useState(false);
     const [show, setShow] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) =>{
             if (entry.isIntersecting) {
                 setShow(true);
+                setIsLeaving(false);
             } else {
                 if (entry.boundingClientRect.top > 0) {
                     setShow(false);
@@ -33,46 +36,92 @@ function OfferCard({ item }: { item: offers}) {
         return () => {
           observer.disconnect();
         };
-    }, [cardRef, item.id]);
+    }, [cardRef, item.id, isLeaving]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (cardRef.current) {
+                console.log(cardRef.current?.getBoundingClientRect())
+                const rect = cardRef.current?.getBoundingClientRect();
+    
+                let percentageFromTop = (rect.top / window.innerHeight) * 100;
+
+                percentageFromTop = 40 + (percentageFromTop * (80 - 40) / 100);
+
+                console.log(Math.max(40, Math.min(80, percentageFromTop)));
+                setScrollPosition(Math.max(40, Math.min(80, percentageFromTop)));
+            }
+        };
+    
+        if (show) {
+            window.addEventListener('scroll', handleScroll);
+        } else {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [show]);
 
     return (
         <div 
             ref={cardRef}
             className={`
                 w-full 
+                h-96
+                py-72
                 flex 
                 flex-col ${item.id % 2 == 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'}
-                justify-between 
                 overflow-hidden
-                items-start 
+                justify-center 
+                items-center
                 gap-5 
                 transition-all
                 duration-500
                 ease-in-out
+                relative
             `}
         >
-            <div 
+            <div
                 className={`
-                    w-full sm:w-1/2 
+                    w-full
                     h-full 
-                    relative 
                     overflow-hidden
                     transition-all
                     duration-500
                     ease-in-out
                     ${show ? 'translate-x-0 opacity-1' : '-translate-x-96 opacity-0'}
+                    absolute
+                    top-0
+                    left-0
+                    bg-black
                 `}
             >
-                <Image 
-                    width={500}
-                    height={500}
-                    src={item.image}
-                    alt='gym photo for the equipment' />
+                <div
+                    className={`
+                    w-full
+                    h-[150%]
+                    relative
+                    opacity-40
+                    transform
+                    `}>
+                    <Image
+                        layout='fill'
+                        objectFit='cover'
+                        loading='lazy'
+                        style={{
+                            transition: 'all 0s ease'
+                        }}
+                        objectPosition={`center ${scrollPosition}%`}
+                        src={item.image}
+                        alt='gym photo for the equipment' />
+                </div>
             </div>
 
             <div 
                 className={`
-                    w-full sm:w-1/2
+                    w-1/2 sm:w-1/3
                     flex 
                     flex-col 
                     justify-start 
@@ -85,7 +134,7 @@ function OfferCard({ item }: { item: offers}) {
                     ${show ? 'translate-x-0 opacity-1' : 'translate-x-96 opacity-0'}
                 `}
             >
-                <p className='text-custom-main text-lg'>{item.title}</p>
+                <p className='text-custom-main text-2xl font-bold -translate-x-1/4'>{item.title}</p>
                 <p className='text-custom-main'>{item.desc}</p>
             </div>
         </div>
@@ -123,14 +172,12 @@ export default function Offer() {
     return (
         <div className='w-full bg-custom-background flex justify-center items-center py-32'>
             <div className='
-                w-8/12 md:w-9/12 xl:w-7/12
+                w-full
                 flex 
                 flex-col 
                 justify-center 
                 items-center 
                 gap-6'>
-                <p className='text-custom-main text-2xl'>What We Offer</p>
-
                 <div className='w-full flex flex-col justify-center items-center gap-20'>
                     {offers.map((item, index) => (
                         <OfferCard key={index} item={item} />

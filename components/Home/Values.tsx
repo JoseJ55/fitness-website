@@ -158,7 +158,7 @@ export default function Values() {
             <div
                 className='
                     z-20
-                    w-full md:w-11/12 lg:w-10/12 2xl:w-7/12
+                    w-full md:w-11/12 lg:w-10/12 2xl:w-6/12
                     flex
                     flex-col md:flex-row
                     justify-between

@@ -18,10 +18,11 @@ Tailwind CSS enhances rendering efficiency and ensures consistent design aesthet
 * Firebase: Hosts and manages the website for seamless online access.
 
 ## Images
-![Home image](https://github.com/JoseJ55/fitness-gym/blob/main/public/assets/fitness-101-main.png?raw=true)
+![Home image](public/assets/fitness-101-main.png)
 
 ## Future Plans
 * Incorporate React components to enable dynamic rendering of product and informational pages.
+
 * Explore expanding functionality with additional routes and features.
 
 ## Links

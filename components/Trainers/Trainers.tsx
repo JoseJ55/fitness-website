@@ -157,6 +157,23 @@ const TrainerCard = ({ trainer }: { trainer: train }) => {
                         ))}
                     </div>
                 </div>
+
+                <div className='
+                    w-full
+                    h-10
+                    z-50
+                '>
+                    <input className='
+                        w-fit
+                        h-full
+                        py-1
+                        px-2
+                        border-2
+                        border-custom-main hover:border-white
+                        text-custom-main hover:text-white
+                        hover:cursor-pointer
+                    ' type='button' value='Book a Session' onClick={() => null} />
+                </div>
             </div>
         </div>
     );

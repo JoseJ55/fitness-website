@@ -5,6 +5,8 @@ import "./globals.css";
 
 import Footer from "@/components/Footer";
 
+import StoreProvider from "./StoreProvider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,8 +25,10 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <body className={inter.className}>
-        {children}
-        <Footer />
+        <StoreProvider>
+          {children}
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

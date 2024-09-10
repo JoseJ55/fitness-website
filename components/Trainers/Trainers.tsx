@@ -8,7 +8,6 @@ import TrainerCard from './TrainerCard';
 
 function Trainers() {
     const trainers = useAppSelector((state) => state.trainers.trainers);
-    console.log(trainers);
 
     return (
         <div className='bg-custom-background flex justify-center items-center py-64 w-full'>

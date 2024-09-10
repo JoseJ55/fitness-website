@@ -4,6 +4,9 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import Image from "next/image"
 
+import Calendar from './Calendar';
+import CalendarForm from './CalendarForm';
+
 interface review {
     name: string;
     review: string;
@@ -23,6 +26,8 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
     const trainerRef = useRef<HTMLInputElement>(null);
 
     const [show, setShow] = useState(false);
+    const [showSchedule, setShowSchedule] = useState(false);
+    const [selectedDate, setSelectedDate] = useState<string>('');
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) =>{
@@ -43,12 +48,16 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
         };
     }, [trainerRef]);
 
+    const handleBookSession = () => {
+        setShowSchedule((prev) => { return !prev })
+    };
+
     return (
         <div 
             ref={trainerRef} 
             className='
             w-full 
-            h-[550px] md:h-fit lg:h-[600px]
+            h-[650px] md:h-fit lg:h-[600px]
             flex 
             flex-col md:flex-row
             justify-end 
@@ -91,88 +100,170 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
 
             <div className='
                 w-full md:w-1/2 2xl:w-5/12
-                h-full
-                py-6 
-                px-6
-                flex 
-                flex-col 
-                justify-center 
-                items-center 
-                gap-5 md:gap-10
-            '>
+                h-[1550px] md:h-full
+                relative
+                flex
+                flex-col
+                overflow-hidden
+                '>
                 <div className={`
-                    w-full 
+                    w-full
+                    h-full min-h-full
+                    py-6 
+                    px-6
                     flex 
                     flex-col 
-                    justify-start 
-                    items-start gap-3
+                    justify-center 
+                    items-center 
+                    gap-5 md:gap-10
                     transition-all
                     duration-[1300ms]
                     ease-in-out
-                    ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
+                    ${showSchedule ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}
                 `}>
-                    <p className='text-custom-main text-lg md:text-xl'>{trainer.first_name} {trainer.last_name}</p>
-                    <p className='text-custom-main text-sm md:text-base'>{trainer.desc}</p>
-                </div>
-
-                <div className='
-                    w-full 
-                    flex 
-                    flex-col sm:flex-row
-                    justify-start 
-                    items-start 
-                    gap-3 sm:gap-5
-                '>
                     <div className={`
-                        w-full sm:w-5/12 
+                        w-full 
                         flex 
                         flex-col 
                         justify-start 
-                        items-center 
-                        gap-2
+                        items-start gap-3
                         transition-all
-                        duration-[1600ms]
+                        duration-[1300ms]
                         ease-in-out
                         ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
                     `}>
-                        {trainer.qualifications.map((qualification, index) => (
-                            <p key={index} className='text-custom-main text-xs md:text-sm decoration-dashed'>- {qualification}</p>
-                        ))}
+                        <p className='text-custom-main text-lg md:text-xl'>{trainer.first_name} {trainer.last_name}</p>
+                        <p className='text-custom-main text-sm md:text-base'>{trainer.desc}</p>
                     </div>
 
-                    <div className={`
-                        w-full sm:w-7/12 
+                    <div className='
+                        w-full 
                         flex 
-                        flex-col 
+                        flex-col sm:flex-row
                         justify-start 
-                        items-center 
-                        gap-2
-                        transition-all
-                        duration-[1900ms]
-                        ease-in-out
-                        ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
-                    `}>
-                        {trainer.reviews.map((review, index) => (
-                            <p key={index} className='text-custom-main text-xs md:text-sm'>&quot;{review.review}&quot; - {review.name}</p>
-                        ))}
+                        items-start 
+                        gap-3 sm:gap-5
+                    '>
+                        <div className={`
+                            w-full sm:w-5/12 
+                            flex 
+                            flex-col 
+                            justify-start 
+                            items-center 
+                            gap-2
+                            transition-all
+                            duration-[1600ms]
+                            ease-in-out
+                            ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
+                        `}>
+                            {trainer.qualifications.map((qualification, index) => (
+                                <p key={index} className='text-custom-main text-xs md:text-sm decoration-dashed'>- {qualification}</p>
+                            ))}
+                        </div>
+
+                        <div className={`
+                            w-full sm:w-7/12 
+                            flex 
+                            flex-col 
+                            justify-start 
+                            items-center 
+                            gap-2
+                            transition-all
+                            duration-[1900ms]
+                            ease-in-out
+                            ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
+                        `}>
+                            {trainer.reviews.map((review, index) => (
+                                <p key={index} className='text-custom-main text-xs md:text-sm'>&quot;{review.review}&quot; - {review.name}</p>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className='
+                        w-full
+                        h-10
+                        z-50
+                    '>
+                        <input className='
+                            w-fit
+                            h-full
+                            py-1
+                            px-2
+                            border-2
+                            border-custom-main hover:border-white
+                            text-custom-main hover:text-white
+                            hover:cursor-pointer
+                        ' type='button' value='Book a Session' onClick={handleBookSession} />
                     </div>
                 </div>
 
-                <div className='
+                <div className={`
                     w-full
-                    h-10
-                    z-50
-                '>
-                    <input className='
-                        w-fit
-                        h-full
-                        py-1
-                        px-2
-                        border-2
-                        border-custom-main hover:border-white
-                        text-custom-main hover:text-white
-                        hover:cursor-pointer
-                    ' type='button' value='Book a Session' onClick={() => null} />
+                    h-full min-h-full
+                    py-6 
+                    px-6
+                    flex 
+                    flex-col 
+                    justify-center
+                    gap-5 md:gap-10
+                    transition-all
+                    duration-[1300ms]
+                    ease-in-out
+                    ${showSchedule ? '-translate-y-full opacity-100' : 'translate-y-0 opacity-0'}
+                `}>
+                    <div className='
+                        w-11/12
+                        flex
+                        justify-between
+                    '>
+                        <h3 className='
+                            w-full
+                            text-lg md:text-xl
+                            text-custom-main
+                        '>Book A Session</h3>
+
+                        {selectedDate === '' ? <input 
+                            type='button' 
+                            value='^'
+                            onClick={() => setShowSchedule(false)}
+                            className='
+                                text-xl md:text-2xl
+                                text-custom-main
+                                hover:cursor-pointer
+                                text-center
+                                px-4
+                            '
+                        /> : null}
+                    </div>
+
+                    <div className='
+                        w-full
+                        flex
+                        items-center
+                        gap-3
+                        relative
+                        overflow-hidden
+                    '>
+                        <div className={`
+                            min-w-full
+                            transition-all
+                            duration-[1300ms]
+                            ease-in-out
+                            ${selectedDate == '' ? '-translate-x-full opacity-0' : 'translate-x-0 opacity-100'}
+                        `}>
+                            <CalendarForm selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                        </div>
+
+                        <div className={`
+                            min-w-full
+                            transition-all
+                            duration-[1300ms]
+                            ease-in-out
+                            ${selectedDate == '' ? '-translate-x-full opacity-100' : 'translate-x-0 opacity-0'}
+                        `}>
+                            <Calendar selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

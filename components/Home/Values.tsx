@@ -2,6 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 
+import { PiHandshakeLight } from "react-icons/pi";
+import { FaPeopleRobbery } from "react-icons/fa6";
+import { LuDumbbell } from "react-icons/lu";
+
 interface value {
     id: number,
     title: string,
@@ -41,11 +45,11 @@ const ValueCard = ({ item }: { item: value }) => {
             className={`
                 w-10/12 sm:w-2/4 md:w-1/3 lg:w-4/12
                 bg-custom-accent 
-                flex-1 
-                flex-col 
-                justify-start 
+                flex
+                group
+                justify-center 
                 items-center 
-                gap-5 xl:gap-7
+                gap-4 xl:gap-6
                 p-9 md:p-7 xl:p-10
                 min-h-80
                 max-h-96
@@ -57,8 +61,46 @@ const ValueCard = ({ item }: { item: value }) => {
                 ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}  
             `}
         >
-            <p className='text-xl font-bold text-custom-main text-center z-30 xl:mb-4'>{title}</p>
-            <p className='text-base text-custom-main text-center z-30'>{desc}</p>
+            <div className='
+                w-full
+                flex
+                flex-col
+                justify-center
+                items-center
+                transition-all
+                duration-600
+                ease-in-out
+                group-hover:opacity-0
+            '>
+                {id == 1 ? <PiHandshakeLight size='2.5rem' className='text-custom-main' /> :
+                id == 2 ? <LuDumbbell size='2.5rem' className='text-custom-main' /> : 
+                <FaPeopleRobbery size='2.5rem' className='text-custom-main' />}
+                <p className='text-xl font-bold text-custom-main text-center z-30 xl:mb-4'>{title}</p>
+            </div>
+
+            <div className='
+                w-full
+                h-full
+                z-30
+                absolute
+                top-0
+                left-0
+                opacity-0
+                transition-all
+                duration-600
+                ease-in-out
+                group-hover:opacity-100
+                flex
+                justify-center
+                items-center
+            '>
+                <p className='
+                    text-base 
+                    text-custom-main 
+                    text-center 
+                    w-10/12
+                '>{desc}</p>
+            </div>
         </div>
     );
 };

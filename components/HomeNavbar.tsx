@@ -83,7 +83,6 @@ function HomeNavbar() {
         flex
         w-10/12 xl:w-8/12
         h-14
-        flex
         justify-start
         items-center
         overflow-hidden

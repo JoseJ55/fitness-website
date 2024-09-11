@@ -2,7 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
+import { useRouter } from 'next/navigation';
+
 function About() {
+  const router = useRouter();
+
   const aboutRef = useRef<HTMLInputElement>(null);
 
   const [inView, setInView] = useState(false);
@@ -50,33 +54,43 @@ function About() {
           ref={aboutRef} 
           className='
             flex 
-            flex-col 
+            flex-col md:flex-row
             justify-center 
             items-center 
-            w-2/3 md:w-1/2 lg:w-1/3 
+            w-2/3 lg:w-1/2 2xl:w-1/3
             gap-5
           '>
             <p className={`
-              text-custom-main 
-              text-xl
+              text-custom-main
               transition-all
-              duration-1000
+              duration-800
               ease-in-out
-              ${inView ? 'translate-x-0 opacity-1' : '-translate-x-96 opacity-0'}
-            `}>About Us</p>
-            <p className={`
-              text-custom-main 
-              text-l 
-              text-center
-              transition-all
-              duration-1000
-              ease-in-out
+              text-center md:text-start
               ${inView ? 'translate-x-0 opacity-1' : 'translate-x-96 opacity-0'}
             `}>
               Joins us to achieve your dream body and psychical goals. With the best equipment there 
               is and some of the best trainers, we can help you achieve any goal you have set your eyes 
               on. All we need is you and your dedication.
             </p>
+            <input 
+              type='button' 
+              value='Become a member' 
+              onClick={() => router.push('/membership')}
+              className={`
+                text-custom-main
+                border-2
+                border-custom-main
+                rounded
+                py-1
+                px-2
+                transition-all
+                duration-1000
+                ease-in-out
+                hover:cursor-pointer
+                hover:scale-105
+                ${inView ? 'translate-x-0 opacity-1' : 'translate-x-96 opacity-0'}
+              `}
+            />
         </div>
     </div>
   )

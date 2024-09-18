@@ -38,24 +38,24 @@ const QA = ({ qa } : { qa: question }) => {
 
     switch (id) {
         case 1:
-            container = 'w-4/6 sm:w-1/4 flex flex-col self-start gap-3 sm:gap-5';
-            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? 'translate-x-1/4 opacity-100' : '-translate-x-0 opacity-0'}`;
-            ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? 'translate-x-1/2 opacity-100' : 'translate-x-full opacity-0'}`;
+            container = 'w-4/6 sm:w-2/5 flex flex-col self-start gap-3 sm:gap-5';
+            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out text-xl ${show ? 'translate-x-1/5 opacity-100' : '-translate-x-0 opacity-0'}`;
+            ans = `text-white z-20 transition-all duration-1000 ease-in-out ${show ? 'translate-x-1/3 opacity-100' : 'translate-x-full opacity-0'}`;
             break;
         case 2:
-            container = 'w-4/6 sm:w-1/4 flex flex-col self-end gap-3 sm:gap-5';
-            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/2 opacity-100' : '-translate-x-full opacity-0'}`;
-            ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/4 opacity-100' : '-translate-x-0 opacity-0'}`;
+            container = 'w-4/6 sm:w-2/5 flex flex-col self-end gap-3 sm:gap-5';
+            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out text-xl ${show ? '-translate-x-1/3 opacity-100' : '-translate-x-full opacity-0'}`;
+            ans = `text-white z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/5 opacity-100' : '-translate-x-0 opacity-0'}`;
             break;
         case 3:
-            container = 'w-4/6 sm:w-1/4 flex flex-col self-center gap-3 sm:gap-5';
-            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/3 opacity-100' : '-translate-x-full opacity-0'}`;
-            ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-2/6 opacity-100' : 'translate-x-0 opacity-0'}`;
+            container = 'w-4/6 sm:w-2/5 flex flex-col self-center gap-3 sm:gap-5';
+            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out text-xl ${show ? '-translate-x-1/3 opacity-100' : '-translate-x-full opacity-0'}`;
+            ans = `text-white z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/4 opacity-100' : 'translate-x-0 opacity-0'}`;
             break;
         default:
-            container = 'w-4/6 sm:w-1/4 flex flex-col self-end gap-3 sm:gap-5';
-            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/4 opacity-100' : 'translate-x-0 opacity-0'}`;
-            ans = `text-custom-main z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/2 opacity-100' : '-translate-x-full opacity-0'}`;
+            container = 'w-4/6 sm:w-2/5 flex flex-col self-end gap-3 sm:gap-5';
+            quest = `text-custom-main z-20 transition-all duration-1000 ease-in-out text-xl ${show ? '-translate-x-1/5 opacity-100' : 'translate-x-0 opacity-0'}`;
+            ans = `text-white z-20 transition-all duration-1000 ease-in-out ${show ? '-translate-x-1/3 opacity-100' : '-translate-x-full opacity-0'}`;
     }
 
     return (

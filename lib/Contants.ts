@@ -51,3 +51,72 @@ export const trainers = [
         ]
     }
 ];
+
+export const shopProducts = [
+    {
+        id: 1,
+        type: 'long',
+        image: '/assets/shop/7a186b32-af69-4466-bfab-b8c76642242a.a04c7b0900bed6660199ff53bc26f39f.jpeg',
+        desc: 'High Protein bars to refuel.',
+        name: 'Protein Bars',
+        price: 999,
+        rating: 47,
+        stock: 1020,
+        bought: 239,
+    },
+    {
+        id: 2,
+        type: 'tall',
+        image: '/assets/shop/61c0oV0ar1L._AC_SX466_.jpg',
+        desc: 'Recover easier with creatine.',
+        name: 'Creatine Powder',
+        price: 1999,
+        rating: 45,
+        stock: 620,
+        bought: 639,
+    },
+    {
+        id: 3,
+        type: 'tall',
+        image: '/assets/shop/61u-qC6Z-mL._AC_SL1500_.jpg',
+        desc: 'Build more muscle with a new flavor of protein powder.',
+        name: 'Protein Powder',
+        price: 2499,
+        rating: 49,
+        stock: 340,
+        bought: 432,
+    },
+    {
+        id: 4,
+        type: 'default',
+        image: '/assets/shop/61Oi8E1n-nL.jpg',
+        desc: 'Feel more energize with creatine.',
+        name: 'Micronized Creatine',
+        price: 2999,
+        rating: 50,
+        stock: 203,
+        bought: 234,
+    },
+    {
+        id: 5,
+        type: 'default',
+        image: '/assets/shop/71auZO+BmwL._AC_SL1500_.jpg',
+        desc: 'Get more out of your workout with the gold standard.',
+        name: 'Gold Standard Pre-workout',
+        price: 2999,
+        rating: 47,
+        stock: 0,
+        bought: 520,
+    },
+    {
+        id: 6,
+        type: 'default',
+        image: '/assets/shop/044188.jpg',
+        desc: 'Recover faster with a strong pre workout.',
+        name: 'Woke AF Pre-workout',
+        price: 2499,
+        rating: 48,
+        stock: 283,
+        bought: 124,
+    }
+];

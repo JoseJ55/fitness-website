@@ -1,19 +1,22 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { TypedUseSelectorHook } from 'react-redux'
 
-import { trainersReducer } from './features/trainers/trainersSlice'
+import { trainersReducer } from './features/trainers/trainersSlice';
+import { shopReducer } from './features/shop/shopSlice';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-        trainers: trainersReducer
+        trainers: trainersReducer,
+        shop: shopReducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false })
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: false,
+        immutableCheck: false,
+      }),
   })
 }
 
-// Infer the type of makeStore
 export type AppStore = ReturnType<typeof makeStore>
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<AppStore['getState']>
 export type AppDispatch = AppStore['dispatch']

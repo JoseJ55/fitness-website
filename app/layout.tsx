@@ -4,6 +4,7 @@ import Head from "next/head";
 import "./globals.css";
 
 import Footer from "@/components/Footer";
+import Cart from "@/components/Cart";
 
 import StoreProvider from "./StoreProvider";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <StoreProvider>
           {children}
           <Footer />
+          <Cart />
         </StoreProvider>
       </body>
     </html>

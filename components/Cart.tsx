@@ -96,8 +96,8 @@ function Cart() {
                 overflow-y-auto
                 scroll
             '>
-                {cart.map((item) => (
-                    <div className='
+                {cart.map((item, index) => (
+                    <div key={index} className='
                         w-full
                         h-64
                         flex
@@ -161,7 +161,7 @@ function Cart() {
                     text-white
                     text-lg
                     text-center
-                '>There doesn't seem to be anything in your cart</p>
+                '>There doesn&apos;t seem to be anything in your cart</p>
             </div>}
 
             <div className='

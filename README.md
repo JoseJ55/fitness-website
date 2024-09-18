@@ -28,4 +28,4 @@ Tailwind CSS enhances rendering efficiency and ensures consistent design aesthet
 ## Links
 https://github.com/JoseJ55/fitness-website
 
-https://fitness101-28.herokuapp.com/
+https://fitness101-bbd78.web.app/

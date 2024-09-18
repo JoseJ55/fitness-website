@@ -14,7 +14,7 @@ export const trainersSlice = createSlice({
     name: 'trainers',
     initialState,
     reducers: {
-        setCurrentTrainer: (state, action: PayloadAction<Number>) => {
+        setCurrentTrainer: (state, action: PayloadAction<number>) => {
             state.current_trainer = action.payload;
         }
     }

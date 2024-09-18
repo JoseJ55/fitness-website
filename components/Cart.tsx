@@ -42,7 +42,7 @@ function Cart() {
 
     return (
         <div className={`
-            w-96
+            w-screen sm:w-96
             h-screen
             bg-custom-background
             fixed
@@ -101,7 +101,7 @@ function Cart() {
                         w-full
                         h-64
                         flex
-                        justify-start
+                        justify-center sm:justify-start
                         items-start
                         px-3
                         py-2
@@ -110,7 +110,7 @@ function Cart() {
                         border-custom-accent
                     '>
                         <div className={`
-                            w-2/5
+                            w-1/3 sm:w-2/5
                             h-full
                             relative
                         `}>
@@ -118,11 +118,14 @@ function Cart() {
                                 layout='fill'
                                 objectFit='cover'
                                 src={`${item?.image}`} 
+                                style={{
+                                    objectFit: 'contain'
+                                }}
                                 alt='product image' />
                         </div>
 
                         <div className='
-                            w-1/2
+                            w-2/5 sm:w-1/2
                             h-full
                             text-white
                             text-xl

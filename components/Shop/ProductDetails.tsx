@@ -64,7 +64,7 @@ function ProductDetails() {
                     flex
                     justify-start
                     items-center
-                    px-10
+                    px-5 sm:px-10
                     text-white
                     text-3xl
                     hover:cursor-pointer
@@ -74,24 +74,29 @@ function ProductDetails() {
 
                 <div className='
                     w-4/5
+                    max-w-[1500px]
                     h-full
                     flex
-                    justify-between
+                    flex-col sm:flex-row
+                    justify-start sm:justify-between
                 '>
                     <div className='
-                        w-1/2
-                        h-3/4
+                        w-full sm:w-1/2
+                        h-1/2 sm:h-3/4
                         relative
                     '>
                         <Image 
                             layout='fill'
                             objectFit='cover'
                             src={`${selectedProduct?.image}`} 
+                            style={{
+                                objectFit: 'contain'
+                            }}
                             alt='product image' />
                     </div>
 
                     <div className='
-                        w-5/12
+                        w-full sm:w-5/12
                         flex
                         flex-col
                         justify-start
@@ -138,9 +143,10 @@ function ProductDetails() {
                             flex
                             gap-3
                             mb-5
+                            sm:flex-col lg:flex-row
                         '>
                             <div className='
-                                w-1/4
+                                w-1/4 sm:w-full lg:w-1/2 xl:w-1/4
                                 flex
                                 gap-2
                             '>

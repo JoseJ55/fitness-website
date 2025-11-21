@@ -70,7 +70,7 @@ function FQA() {
     const data = [
         {
             id: 1,
-            question: 'Can I freeze my membership if I&apos;m unable to use the gym for an extended period?',
+            question: 'Can I freeze my membership if I\'m unable to use the gym for an extended period?',
             answer: 'Yes, memberships can be frozen for up to 3 months with no additional charge.'
         },
         {
@@ -135,7 +135,7 @@ function FQA() {
                     top-1/12 sm:top-1/4 xl:top-0
                     z-10 
                     ${fade ? 'opacity-55' : 'opacity-100'}
-                `}>FQA</p>
+                `}>FAQ</p>
 
                 <div ref={questionsRef} className='flex flex-col justify-start items-center py-32 gap-32 w-full'>
                     {data.map((question) => (

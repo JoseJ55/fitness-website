@@ -12,8 +12,6 @@ function Hero() {
                 src='/assets/samuel-girven-fqMu99l8sqo-unsplash.jpg'
                 alt='membership banner background' />
         </div>
-
-        {/* <p className='text-custom-main text-4xl z-20 -translate-x-1/3 w-1/4 font-bold'>Become a Member and start your journey</p> */}
     </div>
   )
 }

@@ -55,13 +55,14 @@ const Membership = ({ membership } : { membership : membership}) => {
             ease-in-out
             hover:scale-105
             group
-            border-2
-            border-custom-main
-            hover:bg-custom-accent
+            bg-custom-accent 
             rounded-xl
+            border-white/10
+            border-[1px]
+            font-mulish
             ${show ? 'translate-y-0 opacity-100' : 'translate-y-1/2 opacity-0'}
         `}>
-            <div className='flex flex-col justify-start items-start w-full'>
+            <div className='flex flex-col justify-start items-start w-full text-white'>
                 <p className='
                     text-xl lg:text-2xl 
                     transition-all
@@ -80,7 +81,7 @@ const Membership = ({ membership } : { membership : membership}) => {
                     transition-all
                     duration-500
                     ease-in-out 
-                    text-white group-hover:text-black
+                    text-white 
                 '><span className='text-custom-main'>${price.monthly}</span> per month</p>
 
                 <p className='
@@ -89,14 +90,13 @@ const Membership = ({ membership } : { membership : membership}) => {
                     transition-all
                     duration-500
                     ease-in-out 
-                    text-custom-accent group-hover:text-black
                 '>plus taxes & fees</p>
 
                 <p className='
                     w-full
                     border-[1px]
-                    border-custom-main
                     my-8
+                    border-custom-main
                 '></p>
 
                 {price.one_time ?
@@ -105,7 +105,6 @@ const Membership = ({ membership } : { membership : membership}) => {
                             transition-all
                             duration-500
                             ease-in-out 
-                            text-white group-hover:text-black
                             text-sm lg:text-base
                         '>- one-time initiation fee of ${price.one_time}</p>
                     </div> :
@@ -114,7 +113,6 @@ const Membership = ({ membership } : { membership : membership}) => {
                             transition-all
                             duration-500
                             ease-in-out 
-                            text-white group-hover:text-black
                             text-sm lg:text-base
                         '>- no initiation fee </p>
                     </div>
@@ -126,7 +124,6 @@ const Membership = ({ membership } : { membership : membership}) => {
                             transition-all
                             duration-500
                             ease-in-out 
-                            text-white group-hover:text-black
                             text-sm lg:text-base
                         '>- annual fee of ${price.annual}</p>
                     </div> :
@@ -135,7 +132,6 @@ const Membership = ({ membership } : { membership : membership}) => {
                             transition-all
                             duration-500
                             ease-in-out 
-                            text-white group-hover:text-black
                             text-sm lg:text-base
                         '>- no annual fee </p>
                     </div>
@@ -146,7 +142,6 @@ const Membership = ({ membership } : { membership : membership}) => {
                         transition-all
                         duration-500
                         ease-in-out 
-                        text-white group-hover:text-black
                         text-sm lg:text-base
                     '>- {commitment} commitment</p>
                 </div>
@@ -183,8 +178,8 @@ const Membership = ({ membership } : { membership : membership}) => {
                             className='
                                 transition-all
                                 duration-500
-                                ease-in-out 
-                                text-white group-hover:text-black
+                                ease-in-out
+                                text-white
                                 text-sm
                         '>- {privilege}</p>
                     ))}
@@ -283,14 +278,15 @@ function Memberships() {
         '>
             <p className='
                 text-custom-main 
-                text-3xl 
+                text-5xl 
                 md:-translate-x-1/2
                 w-3/4 sm:1/2 md:w-1/3
                 font-bold
+                font-bebas-neue
             '>Become a Member and start your journey</p>
             
             <div className='
-                w-3/4 md:w-10/12 2xl:w-9/12 xl:w-8/12 2xl:w-2/4
+                w-3/4 md:w-10/12 2xl:w-9/12 xl:w-8/12
                 grid 
                 grid-cols-1 md:grid-cols-3 
                 gap-10 md:gap-4 2xl:gap-10

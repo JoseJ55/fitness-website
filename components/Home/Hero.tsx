@@ -31,21 +31,22 @@ function Hero() {
                 gap-5
             '
         >
-            <div className='w-fit relative pt-[100%] w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16'>
+            <div className='w-fit relative pt-[100%] h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:w-32 xl:h-24 text-custom-main'>
                 <Image 
                     layout="fill"
                     objectFit="contain"
-                    src='/assets/logo.png' 
+                    src='/assets/logo.svg' 
                     alt='fitness logo' 
                 />
             </div>
             <p className='
-                font-sans 
+                font-bebas-neue
                 text-3xl
                 sm:text-3xl
                 md:text-4xl
                 lg:text-5xl
-                xl:text-6xl
+                xl:text-7xl
+                font-bold
             '>Fitness 101</p>
         </div>
     </div>

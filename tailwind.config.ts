@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -16,22 +17,26 @@ const config: Config = {
       backgroundColor: {
         'danny-grey': '#474350',
         
-        'custom-background': '#1E1E34',
+        'custom-background': '#07102F',
         'custom-main': '#FFFF65',
         'custom-second': '#E26D5C',
-        'custom-accent': '#B6C2D9'
+        'custom-accent': '#141D3C'
       },
       colors: {
         'danny-grey': '#474350',
 
-        'custom-background': '#1E1E34',
+        'custom-background': '#07102F',
         'custom-main': '#FFFF65',
         'custom-second': '#E26D5C',
-        'custom-accent': '#B6C2D9'
+        'custom-accent': '#141D3C'
       },
       spacing: {
         '3/2': '150%'
-      }
+      },
+      fontFamily: {
+        mulish: ['Mulish', fontFamily.sans],
+        'bebas-neue': ['Bebas Neue', fontFamily.sans]
+      },
     },
   },
   plugins: [],

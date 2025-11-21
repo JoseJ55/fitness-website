@@ -101,7 +101,7 @@ function OfferCard({ item }: { item: offers}) {
                 <div
                     className={`
                     w-full
-                    h-[150%]
+                    h-[100%]
                     relative
                     opacity-40
                     transform
@@ -131,11 +131,12 @@ function OfferCard({ item }: { item: offers}) {
                     transition-all
                     duration-500
                     ease-in-out
+                    font-mulish
                     ${show ? 'translate-x-0 opacity-1' : 'translate-x-96 opacity-0'}
                 `}
             >
-                <p className='text-custom-main text-2xl font-bold -translate-x-1/4'>{item.title}</p>
-                <p className='text-custom-main'>{item.desc}</p>
+                <p className='text-custom-main text-2xl font-semibold -translate-x-1/4'>{item.title}</p>
+                <p className='text-white'>{item.desc}</p>
             </div>
         </div>
     );

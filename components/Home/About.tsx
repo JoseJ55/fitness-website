@@ -44,31 +44,47 @@ function About() {
       className='
         flex 
         justify-center 
-        items-center 
+        items-start 
         bg-custom-background 
         w-full 
         py-64 
         overflow-hidden
+        gap-6
       '>
+        <p className={`
+          w-1/5
+          text-4xl
+          font-semibold
+          text-white
+          font-bebas-neue
+          transition-all
+          duration-800
+          ease-in-out
+          text-center md:text-start
+          ${inView ? 'translate-x-0 opacity-1' : 'translate-x-96 opacity-0'}
+        `}>
+          Joins us to achieve your <span className='text-custom-main'>dream</span> body and <span className='text-custom-main'>physical</span> goals.
+        </p>
         <div 
           ref={aboutRef} 
           className='
             flex 
-            flex-col md:flex-row
+            flex-col
             justify-center 
-            items-center 
-            w-2/3 lg:w-1/2 2xl:w-1/3
+            items-start
+            w-2/3 lg:w-1/2 2xl:w-1/5
             gap-5
           '>
             <p className={`
-              text-custom-main
+              text-white
               transition-all
               duration-800
               ease-in-out
+              font-mulish
               text-center md:text-start
               ${inView ? 'translate-x-0 opacity-1' : 'translate-x-96 opacity-0'}
             `}>
-              Joins us to achieve your dream body and psychical goals. With the best equipment there 
+              With the best equipment there 
               is and some of the best trainers, we can help you achieve any goal you have set your eyes 
               on. All we need is you and your dedication.
             </p>
@@ -78,8 +94,11 @@ function About() {
               onClick={() => router.push('/membership')}
               className={`
                 text-custom-main
+                hover:text-custom-second
+                font-mulish
                 border-2
                 border-custom-main
+                hover:border-custom-second
                 rounded
                 py-1
                 px-2

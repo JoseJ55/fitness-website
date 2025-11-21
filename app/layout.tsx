@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 
@@ -7,8 +6,6 @@ import Footer from "@/components/Footer";
 import Cart from "@/components/Cart";
 
 import StoreProvider from "./StoreProvider";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Fitness 101",
@@ -24,8 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
       </Head>
-      <body className={inter.className}>
+      <body>
         <StoreProvider>
           {children}
           <Footer />

@@ -17,6 +17,7 @@ function Contact() {
             justify-center 
             items-center 
             sm:p-8 sm:py-16 md:p-16 md:py-24 lg:p-32 xl:p-36
+            h-96
             bg-custom-background 
             w-full 
             overflow-hidden
@@ -32,10 +33,11 @@ function Contact() {
                     transition-all
                     duration-1000
                     ease-in-out
-                    ${submitted ? 'opacity-100 translate-x-1/2' : 'opacity-0 -translate-x-1/2'}
+                    font-mulish
+                    ${submitted ? 'opacity-1' : 'opacity-0 hidden'}
                 `}
             >
-                <p className='text-custom-main text-xl'>Thank you for staying in touch with us</p>
+                <p className='text-white text-xl'>Thank you for staying in touch with us</p>
 
                 <div className='w-full flex justify-center items-center'>
                     <Image
@@ -50,47 +52,52 @@ function Contact() {
 
             <div 
                 className={`
-                    w-3/2 sm:w-8/12 xl:w-1/4
+                    w-3/2 sm:w-8/12 xl:w-1/2
                     flex 
-                    flex-col 
-                    justify-start 
+                    flex-col sm:flex-row 
+                    justify-center 
                     items-start 
                     gap-7 
                     transition-all
                     duration-1000
                     ease-in-out
-                    ${submitted ? 'opacity-0 translate-x-1/2' : 'opacity-100 -translate-x-1/2'}
+                    font-mulish
+                    ${submitted ? 'opacity-0 hidden' : 'opacity-1'}
                 `}
             >
-                <div className='w-full flex flex-col gap-2'>
+                <div className='w-1/3 flex flex-col gap-2'>
                     <p className='
                         w-full
                         text-custom-main 
-                        text-xl
+                        text-2xl
+                        font-semibold
                     '>
                         Stay in touch
                     </p>
 
                     <p className='
                         w-full
-                        text-custom-main
+                        text-white
                     '>
                         Join our news letter to stay in touch with our activity.
                     </p>
                 </div>
 
-                <div className='w-full flex flex-col gap-2 justify-start items-start'>
+                <div className='w-2/3 flex flex-col gap-2 justify-start items-start'>
                     <input 
-                        className='w-full p-3'
+                        className='w-full px-3 py-2 rounded-xl'
                         type='text' 
                         placeholder='Email' />
 
                     <input 
                         className='
                             bg-custom-main
-                            px-2
+                            hover:bg-custom-main/90
+                            px-4
                             py-1
                             text-sm
+                            rounded-lg
+                            hover:cursor-pointer
                         '
                         onClick={handleSubmit}
                         type='submit' />

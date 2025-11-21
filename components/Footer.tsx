@@ -32,6 +32,7 @@ function Footer() {
             p-8 py-24 lg:p-24 
             bg-custom-background
             overflow-hidden
+            font-mulish
         '>
             <div className='
                 w-full sm:w-2/3 md:w-3/4 xl:w-1/2
@@ -43,11 +44,11 @@ function Footer() {
             '>
                 <div className='w-full sm:w-3/12 flex sm:flex-col justify-center sm:justify-start items-center'>
                     <Image
-                        width={50}
-                        height={50}
-                        src={'/assets/logo.png'}
+                        width={90}
+                        height={90}
+                        src={'/assets/logo.svg'}
                         alt='website logo of mountains'/>
-                    <p className='text-custom-main text-lg'>
+                    <p className='text-custom-main text-3xl font-bebas-neue'>
                         Fitness 101
                     </p>
                 </div>
@@ -59,8 +60,9 @@ function Footer() {
                     justify-center sm:justify-start 
                     items-center sm:items-start 
                     gap-2
+                    text-white
                 '>
-                    <p className='text-custom-main text-lg'>Make sure to follow us</p>
+                    <p className='text-white font-semibold text-lg'>Make sure to follow us</p>
 
                     <div className='w-full flex justify-center sm:justify-start items-center gap-2'>
                         <Image
@@ -80,15 +82,15 @@ function Footer() {
                             alt='twitter link' />
                     </div>
 
-                    <p className='text-custom-main'>
+                    <p>
                         email@email.com
                     </p>
                     
-                    <p className='text-custom-main'>
+                    <p>
                         1-234-567-8910
                     </p>
 
-                    <p className='text-custom-main'>
+                    <p>
                         12345 address st, random CA
                     </p>
                 </div>
@@ -103,8 +105,16 @@ function Footer() {
                     <a 
                         className='
                             w-full 
-                            text-custom-main 
-                            text-center
+                            text-white
+                            font-semibold
+                            text-lg
+                        '
+                        onClick={handleAbout}
+                    >Our Links</a>
+                    <a 
+                        className='
+                            w-full 
+                            text-white
                             hover:text-custom-second 
                             hover:cursor-pointer' 
                         onClick={handleAbout}
@@ -112,8 +122,7 @@ function Footer() {
                     <a 
                         className='
                             w-full 
-                            text-custom-main 
-                            text-center
+                            text-white
                             hover:text-custom-second 
                             hover:cursor-pointer'
                         onClick={() => handleNav('trainers')}
@@ -121,8 +130,7 @@ function Footer() {
                     <a 
                         className='
                             w-full 
-                            text-custom-main 
-                            text-center
+                            text-white
                             hover:text-custom-second 
                             hover:cursor-pointer'
                         onClick={() => handleNav('shop')}
@@ -130,8 +138,7 @@ function Footer() {
                     <a 
                         className='
                             w-full 
-                            text-custom-main 
-                            text-center
+                            text-white
                             hover:text-custom-second 
                             hover:cursor-pointer'
                         onClick={() => handleNav('membership')}

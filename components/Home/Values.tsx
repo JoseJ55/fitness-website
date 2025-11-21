@@ -46,18 +46,21 @@ const ValueCard = ({ item }: { item: value }) => {
                 w-10/12 sm:w-2/4 md:w-1/3 lg:w-4/12
                 bg-custom-accent 
                 flex
-                group
+                flex-1
+                flex-col
                 justify-center 
-                items-center 
-                gap-4 xl:gap-6
+                items-center
                 p-9 md:p-7 xl:p-10
-                min-h-80
-                max-h-96
+                h-96
                 relative
-                clip-top-triangle
                 transition-all
                 duration-1000
                 ease-in-out
+                rounded-2xl
+                group
+                hover:cursor-pointer
+                border-[1px]
+                border-white/10
                 ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}  
             `}
         >
@@ -67,38 +70,45 @@ const ValueCard = ({ item }: { item: value }) => {
                 flex-col
                 justify-center
                 items-center
-                transition-all
-                duration-600
-                ease-in-out
-                group-hover:opacity-0
             '>
                 {id == 1 ? <PiHandshakeLight size='2.5rem' className='text-custom-main' /> :
                 id == 2 ? <LuDumbbell size='2.5rem' className='text-custom-main' /> : 
                 <FaPeopleRobbery size='2.5rem' className='text-custom-main' />}
-                <p className='text-xl font-bold text-custom-main text-center z-30 xl:mb-4'>{title}</p>
+                <p 
+                    className='
+                        text-xl 
+                        font-semibold 
+                        text-white 
+                        text-center 
+                        group-hover:text-custom-main 
+                        z-30 
+                        xl:mb-4
+                        transition-all
+                        duration-600
+                        ease-in-out
+                        font-mulish
+                    '
+                >
+                    {title}
+                </p>
             </div>
 
             <div className='
                 w-full
                 h-full
-                z-30
-                absolute
-                top-0
-                left-0
-                opacity-0
-                transition-all
-                duration-600
-                ease-in-out
-                group-hover:opacity-100
                 flex
                 justify-center
                 items-center
             '>
                 <p className='
-                    text-base 
-                    text-custom-main 
+                    text-white
+                    group-hover:text-custom-main
                     text-center 
-                    w-10/12
+                    w-full
+                    transition-all
+                    duration-600
+                    ease-in-out
+                    font-mulish
                 '>{desc}</p>
             </div>
         </div>

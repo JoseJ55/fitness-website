@@ -82,7 +82,7 @@ function HomeNavbar() {
         relative 
         flex
         w-10/12 xl:w-8/12
-        h-14
+        h-16
         justify-start
         items-center
         overflow-hidden
@@ -101,9 +101,9 @@ function HomeNavbar() {
             onClick={handleLogoClick}
           >
             <Image
-              width={40}
-              height={40}
-              src={'/assets/logo.png'}
+              width={80}
+              height={80}
+              src={'/assets/logo.svg'}
               alt={'website logo'} />
           </a>
         </div>
@@ -115,6 +115,7 @@ function HomeNavbar() {
           py-3
           gap-5 
           w-1/4
+          text-xl
           transition-all
           duration-1000
           ease-in-out

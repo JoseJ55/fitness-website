@@ -132,7 +132,7 @@ function ProductDetails() {
                         '>{selectedProduct?.stock && selectedProduct?.stock > 0 ? 'In Stock' : 'Out of Stock'}</p>
 
                         <p className='
-                            text-custom-accent
+                            text-white/70
                             my-2
                         '>
                             Free Delivery

@@ -1,5 +1,6 @@
 'use client';
 import Image from "next/image";
+import { CiStar } from 'react-icons/ci';
 
 import { useAppSelector, useAppDispatch } from '@/lib/hooks';
 
@@ -18,7 +19,7 @@ interface product {
 }
 
 const Product = ({ product }: { product: product}) => {
-    const { type, image, desc } = product;
+    const { type, image, desc, name, price, rating } = product;
 
     const dispatch = useAppDispatch();
 
@@ -28,24 +29,34 @@ const Product = ({ product }: { product: product}) => {
 
     return (
         <div onClick={handleSelect} className={`
-            ${type === 'long' ? 'col-span-2' : type === 'tall' ? 'row-span-2' : 'col-span-1'}
             relative 
             min-h-32 sm:min-h-40 md:min-h-48 lg:min-h-64 xl:min-h-72 
-            h-full
-            clip-top-triangle
+            h-96
             transition-all
             duration-500
             ease-in-out
-            grayscale
-            hover:grayscale-0
             hover:cursor-pointer
-            hover:scale-105
+            flex
+            flex-col
+            justify-start
+            gap-4
         `}>
-            <Image
-                layout='fill'
-                objectFit='cover'
-                src={image}
-                alt={desc}/>
+            <div className='w-full flex-1 relative rounded-xl overflow-hidden'>
+                <Image
+                    layout='fill'
+                    objectFit='cover'
+                    src={image}
+                    alt={desc}
+                />
+            </div>
+
+            <div className='w-full text-white font-mulish'>
+                <p className='text-lg'>{name}</p>
+                <div className='flex flex-row justify-between items-center'>
+                    <p>${price/ 100}</p>
+                    <p className='flex items-center gap-1'>{rating} <CiStar className='text-xl text-custom-main' /></p>
+                </div>
+            </div>
         </div>
     );
 };

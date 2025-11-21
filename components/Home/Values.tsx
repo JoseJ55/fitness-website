@@ -195,13 +195,14 @@ export default function Values() {
                     left-0
                     -translate-y-1/2
                     -translate-x-1/2
-                    text-7xl
+                    text-8xl
                     font-bold
                     text-custom-main
                     opacity-70
                     z-10
                     w-fit
                     text-nowrap
+                    font-bebas-neue
                 `}
             >
                 Our Values

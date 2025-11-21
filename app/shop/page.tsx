@@ -5,7 +5,7 @@ import ProductDetails from "@/components/Shop/ProductDetails";
 
 export default function Home() {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-start relative overflow-hidden">
+      <main className="flex min-h-screen flex-col items-center justify-start relative">
         <HomeNavbar />
         {/* <Hero /> */}
         <Shop />

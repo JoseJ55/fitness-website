@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { IoIosArrowBack } from 'react-icons/io';
+import { IoIosArrowBack, IoIosClose  } from 'react-icons/io';
 
 import { useAppSelector, useAppDispatch } from '@/lib/hooks';
 
@@ -49,8 +49,8 @@ function Cart() {
             right-0
             top-0
             z-[300]
-            border-l-2
-            border-custom-main
+            border-l-[1px]
+            border-custom-main/70
             py-5
             flex
             flex-col
@@ -67,7 +67,7 @@ function Cart() {
                 <p 
                     onClick={handleExtend}
                     className={`
-                        w-fit
+                        ${showCart ? 'w-fit' : 'w-32'}
                         text-custom-main
                         text-3xl
                         mb-5
@@ -87,6 +87,7 @@ function Cart() {
                     w-full
                     px-5
                     text-xl
+                    font-semibold
                 `}>Your Cart</p>
             </div>
 
@@ -99,7 +100,7 @@ function Cart() {
                 {cart.map((item, index) => (
                     <div key={index} className='
                         w-full
-                        h-64
+                        h-48
                         flex
                         justify-center sm:justify-start
                         items-start
@@ -111,7 +112,8 @@ function Cart() {
                     '>
                         <div className={`
                             w-1/3 sm:w-2/5
-                            h-full
+                            min-h-32
+                            h-fit
                             relative
                         `}>
                             <Image 

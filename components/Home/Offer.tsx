@@ -121,12 +121,12 @@ function OfferCard({ item }: { item: offers}) {
 
             <div 
                 className={`
-                    w-1/2 sm:w-1/3
+                    w-3/4 sm:w-1/3
                     flex 
                     flex-col 
                     justify-start 
                     items-start 
-                    gap-6 
+                    gap-2 sm:gap-6 
                     py-5
                     transition-all
                     duration-500
@@ -135,7 +135,7 @@ function OfferCard({ item }: { item: offers}) {
                     ${show ? 'translate-x-0 opacity-1' : 'translate-x-96 opacity-0'}
                 `}
             >
-                <p className='text-custom-main text-2xl font-semibold -translate-x-1/4'>{item.title}</p>
+                <p className='text-custom-main text-2xl font-semibold -translate-x-0 sm:-translate-x-1/4'>{item.title}</p>
                 <p className='text-white'>{item.desc}</p>
             </div>
         </div>
@@ -179,7 +179,7 @@ export default function Offer() {
                 justify-center 
                 items-center 
                 gap-6'>
-                <div className='w-full flex flex-col justify-center items-center gap-20'>
+                <div className='w-full flex flex-col justify-center items-center gap-10 sm:gap-20'>
                     {offers.map((item, index) => (
                         <OfferCard key={index} item={item} />
                     ))}

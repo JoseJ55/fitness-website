@@ -35,7 +35,7 @@ function Footer() {
             font-mulish
         '>
             <div className='
-                w-full sm:w-2/3 md:w-3/4 xl:w-1/2
+                w-full md:w-3/4 xl:w-1/2
                 flex 
                 flex-col sm:flex-row 
                 justify-center 
@@ -104,6 +104,7 @@ function Footer() {
                     gap-2'>
                     <a 
                         className='
+                            hidden sm:block
                             w-full 
                             text-white
                             font-semibold
@@ -116,7 +117,9 @@ function Footer() {
                             w-full 
                             text-white
                             hover:text-custom-second 
-                            hover:cursor-pointer' 
+                            hover:cursor-pointer
+                            text-center sm:text-start
+                        ' 
                         onClick={handleAbout}
                     >About</a>
                     <a 
@@ -124,7 +127,9 @@ function Footer() {
                             w-full 
                             text-white
                             hover:text-custom-second 
-                            hover:cursor-pointer'
+                            hover:cursor-pointer
+                            text-center sm:text-start
+                        '
                         onClick={() => handleNav('trainers')}
                     >Trainers</a>
                     <a 
@@ -132,7 +137,9 @@ function Footer() {
                             w-full 
                             text-white
                             hover:text-custom-second 
-                            hover:cursor-pointer'
+                            hover:cursor-pointer
+                            text-center sm:text-start
+                        '
                         onClick={() => handleNav('shop')}
                     >Shop</a>
                     <a 
@@ -140,7 +147,9 @@ function Footer() {
                             w-full 
                             text-white
                             hover:text-custom-second 
-                            hover:cursor-pointer'
+                            hover:cursor-pointer
+                            text-center sm:text-start
+                        '
                         onClick={() => handleNav('membership')}
                     >Join</a>
                 </div>

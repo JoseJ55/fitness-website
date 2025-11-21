@@ -43,8 +43,6 @@ function Contact() {
                     <Image
                         width={450}
                         height={450}
-                        // layout='fill'
-                        // objectFit='contain'
                         src='/assets/claudio-schwarz-vj3nOtiX85Y-unsplash.jpg'
                         alt='community message' />
                 </div>
@@ -56,7 +54,7 @@ function Contact() {
                     flex 
                     flex-col sm:flex-row 
                     justify-center 
-                    items-start 
+                    items-center sm:items-start 
                     gap-7 
                     transition-all
                     duration-1000
@@ -65,7 +63,7 @@ function Contact() {
                     ${submitted ? 'opacity-0 hidden' : 'opacity-1'}
                 `}
             >
-                <div className='w-1/3 flex flex-col gap-2'>
+                <div className='w-3/4 sm:w-1/3 flex flex-col gap-2'>
                     <p className='
                         w-full
                         text-custom-main 

@@ -43,8 +43,9 @@ function About() {
       id='about-section' 
       className='
         flex 
+        flex-col md:flex-row
         justify-center 
-        items-start 
+        items-center md:items-start 
         bg-custom-background 
         w-full 
         py-64 
@@ -52,7 +53,7 @@ function About() {
         gap-6
       '>
         <p className={`
-          w-1/5
+          w-3/4 md:w-1/5
           text-4xl
           font-semibold
           text-white
@@ -71,7 +72,7 @@ function About() {
             flex 
             flex-col
             justify-center 
-            items-start
+            items-center md:items-start
             w-2/3 lg:w-1/2 2xl:w-1/5
             gap-5
           '>

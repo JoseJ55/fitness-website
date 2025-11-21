@@ -21,17 +21,17 @@ function Hero() {
                 justify-center
                 items-center
                 text-custom-main 
-                w-fit 
+                w-full 
                 z-20 
                 absolute 
                 top-1/2 
                 left-1/2 
                 -translate-y-1/2 
-                -translate-x-1/2 z-0
+                -translate-x-1/2
                 gap-5
             '
         >
-            <div className='w-fit relative pt-[100%] h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:w-32 xl:h-24 text-custom-main'>
+            <div className='w-20 relative pt-[100%] h-10 sm:h-10md:h-12 lg:h-16 xl:w-32 xl:h-24 text-custom-main'>
                 <Image 
                     layout="fill"
                     objectFit="contain"
@@ -41,9 +41,7 @@ function Hero() {
             </div>
             <p className='
                 font-bebas-neue
-                text-3xl
-                sm:text-3xl
-                md:text-4xl
+                text-4xl
                 lg:text-5xl
                 xl:text-7xl
                 font-bold

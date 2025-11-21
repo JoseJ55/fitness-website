@@ -195,7 +195,7 @@ export default function Values() {
                     left-0
                     -translate-y-1/2
                     -translate-x-1/2
-                    text-8xl
+                    text-6xl sm:text-8xl
                     font-bold
                     text-custom-main
                     opacity-70

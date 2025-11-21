@@ -2,9 +2,9 @@ export const trainers = [
     {
         id: 1,
         first_name: 'Daniel',
-        last_name: 'Smith',
+        last_name: 'S',
         desc: 'Daniel specializes in nutrition coaching and weight management. He provides personalized meal plans and nutritional guidance tailored to each client\'s goals, whether it\'s weight loss, muscle gain, or improved overall health.',
-        photo: '/assets/trainers/total-shape-wXBK9JrM0iU-unsplash.jpg',
+        photo: '/assets/trainers/vitaly-gariev-8a4vflYr7gs-unsplash.jpg',
         qualifications: [
             'Certified Nutrition Coach (CNC) from the International Sports Sciences Association (ISSA)',
             'Bachelor\'s Degree in Nutritional Sciences from Florida International University'
@@ -19,9 +19,9 @@ export const trainers = [
     {
         id: 2,
         first_name: 'Sophie',
-        last_name: 'Martinez',
+        last_name: 'M',
         desc: 'Sophie specializes in group fitness classes, particularly dance-based workouts. Her classes are dynamic, high-energy, and designed to make exercise feel like a celebration. She offers a variety of dance styles, including hip-hop, salsa, and Zumba.',
-        photo: '/assets/trainers/spencer-davis-0ShTs8iPY28-unsplash.jpg',
+        photo: '/assets/trainers/ambitious-studio-rick-barrett-tVAmu_inwTE-unsplash.jpg',
         qualifications: [
             'Certified Group Fitness Instructor from the American Council on Exercise (ACE)',
             'Bachelor\'s Degree in Dance from Northwestern University'
@@ -36,9 +36,9 @@ export const trainers = [
     {
         id: 3,
         first_name: 'David',
-        last_name: 'Lee',
+        last_name: 'L',
         desc: 'David specializes in sports massage therapy and corrective exercise. He helps clients alleviate muscular tension, improve flexibility, and prevent injuries through targeted massage techniques and personalized exercise programs.',
-        photo: '/assets/trainers/john-fornander-MdXkOhzL62k-unsplash.jpg',
+        photo: '/assets/trainers/sergio-kian-NC7ynqvd48A-unsplash.jpg',
         qualifications: [
             'Certified Sports Massage Therapist from the National Certification Board for Therapeutic Massage and Bodywork (NCBTMB)',
             'Bachelor\'s Degree in Exercise Physiology from Texas A&M University'

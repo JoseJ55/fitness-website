@@ -55,22 +55,18 @@ function CalendarForm({ selectedDate, setSelectedDate }: { selectedDate: string;
                 transition-all
                 duration-500
                 ease-in-out
+                text-white
                 ${!fade ? 'opacity-0' : 'opacity-100'}
             `}>
                 <p className='
                     text-custom-main
                     text-lg
                 '>Session Booked</p>
+                <p>{splitDate[1]}-{splitDate[2]}-{splitDate[3]} at {splitDate[4]}{parseInt(splitDate[4]) < 5 ? 'PM' : 'AM'}</p>
                 <p className='
-                    text-custom-main
-                '>{splitDate[1]}-{splitDate[2]}-{splitDate[3]} at {splitDate[4]}{parseInt(splitDate[4]) < 5 ? 'PM' : 'AM'}</p>
-                <p className='
-                    text-custom-main
                     text-center
                 '>Thank you for booking a session with us. Please provide your email and phone number on the day you requested.</p>
-                <p className='
-                    text-custom-main
-                '>You will receive a confirmation email shortly.</p>
+                <p>You will receive a confirmation email shortly.</p>
             </div>
         ) 
     } else {

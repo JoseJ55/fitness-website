@@ -66,6 +66,7 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
             overflow-hidden
             sticky
             top-5
+            font-mulish
         '>
             <div className={`
                 w-full md:w-7/12 2xl:w-4/6
@@ -133,7 +134,7 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
                         ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
                     `}>
                         <p className='text-custom-main text-lg md:text-xl'>{trainer.first_name} {trainer.last_name}</p>
-                        <p className='text-custom-main text-sm md:text-base'>{trainer.desc}</p>
+                        <p className='text-white text-sm md:text-base'>{trainer.desc}</p>
                     </div>
 
                     <div className='
@@ -143,6 +144,7 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
                         justify-start 
                         items-start 
                         gap-3 sm:gap-5
+                        text-white
                     '>
                         <div className={`
                             w-full sm:w-5/12 
@@ -157,7 +159,7 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
                             ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
                         `}>
                             {trainer.qualifications.map((qualification, index) => (
-                                <p key={index} className='text-custom-main text-xs md:text-sm decoration-dashed'>- {qualification}</p>
+                                <p key={index} className='text-xs md:text-sm decoration-dashed'>- {qualification}</p>
                             ))}
                         </div>
 
@@ -174,7 +176,7 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
                             ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
                         `}>
                             {trainer.reviews.map((review, index) => (
-                                <p key={index} className='text-custom-main text-xs md:text-sm'>&quot;{review.review}&quot; - {review.name}</p>
+                                <p key={index} className='text-xs md:text-sm'>&quot;{review.review}&quot; - {review.name}</p>
                             ))}
                         </div>
                     </div>
@@ -193,6 +195,7 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
                             border-custom-main hover:border-white
                             text-custom-main hover:text-white
                             hover:cursor-pointer
+                            rounded-lg
                         ' type='button' value='Book a Session' onClick={handleBookSession} />
                     </div>
                 </div>
@@ -215,6 +218,7 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
                         w-11/12
                         flex
                         justify-between
+                        items-center
                     '>
                         <h3 className='
                             w-full
@@ -249,6 +253,7 @@ export default function TrainerCard({ trainer }: { trainer: train }) {
                             transition-all
                             duration-[1300ms]
                             ease-in-out
+                            px-1
                             ${selectedDate == '' ? '-translate-x-full opacity-0' : 'translate-x-0 opacity-100'}
                         `}>
                             <CalendarForm selectedDate={selectedDate} setSelectedDate={setSelectedDate} />

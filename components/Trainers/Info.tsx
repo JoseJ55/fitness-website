@@ -23,7 +23,7 @@ function Info() {
 
 
     return (
-        <div ref={infoRef} className='w-full h-96 flex justify-center items-center relative py-64 bg-custom-background overflow-hidden'>
+        <div ref={infoRef} className='w-full font-mulish h-96 flex justify-center items-center relative py-64 bg-custom-background overflow-hidden'>
             <div className={`
                 absolute 
                 top-0 
@@ -56,7 +56,7 @@ function Info() {
             `}></div>
 
             <div className={`
-                w-1/2 lg:w-2/6 2xl:w-1/4
+                w-1/2 lg:w-1/3
                 z-30 
                 flex 
                 flex-col 
@@ -76,7 +76,7 @@ function Info() {
                     sm:-translate-x-1/2
                 '>Join Us</p>
                 <p className='
-                    text-custom-main 
+                    text-white
                     text-sm sm:text-base 
                     text-center sm:text-left
                 '>Whether you&apos;re a beginner looking to kickstart your fitness journey or a seasoned athlete aiming to reach new heights, our trainers are here to support you every step of the way. With personalized training programs tailored to your unique needs and goals, you&apos;ll receive the attention and expertise you deserve to succeed.</p>

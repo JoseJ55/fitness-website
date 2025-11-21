@@ -28,11 +28,12 @@ function Hero() {
       <p className='
         z-30 
         text-custom-main 
-        text-3xl 
+        text-7xl 
         text-center
         font-bold 
-        w-1/2 sm:w-1/4 
-        sm:-translate-x-1/2
+        w-1/2 sm:w-1/3 
+        sm:-translate-x-1/3
+        font-bebas-neue
       '>
         Let&apos;s embark on this journey together
       </p>
